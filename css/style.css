@@ -1,0 +1,8 @@
+@font-face {
+    font-family:'karma-regular';
+    src: url("css/fonts/Karma-Regular.ttf");
+}
+
+html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
