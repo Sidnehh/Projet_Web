@@ -6,7 +6,7 @@
 html{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #FAD274;
-    background-size : 100px 100px;
+    background-size : 50px 50px;
     background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("../imgs/motif_fond.png");
     background-repeat: round;
     background-attachment: fixed;
@@ -20,18 +20,32 @@ body{
 header{
     background-color: #DF9278;
     height: 90px;
-    text-align: center;
     box-shadow: 0px 5px 10px #936d4c;;
-    margin-bottom: 10px;
     position: fixed;
     width: 100%;
     z-index: 1;
     font-size: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header a {
-    color:beige;
+    color:#f5f5dc;
     text-decoration: none;
+}
+
+#logo_container{
+    align-items: left;
+    margin-left: 20px;
+}
+
+.nav_links {
+    display: flex;
+    justify-content: center;
+    flex: 3;
+    gap: 30px;
+    margin-left: -150px;
 }
 
 .content {
@@ -50,6 +64,11 @@ header a {
     border-width: 2px;
     border-style: solid;
     padding: 20px;
+    display:flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
 }
 
 .dogdiv1 img {
@@ -57,41 +76,92 @@ header a {
     float: left;
 }
 
-.dogdiv1 p {
-    text-align: left;
-}
-
 .dogdiv2 {
-    color: #885E5E;
+    color: #5e8868;
     border-radius: 1%;
     border-width: 2px;
     border-style: solid;
     padding: 20px;
+    display:flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    margin-bottom: 10px;
 }
 
 .dogdiv2 img {
-    filter: drop-shadow(5px 5px #936d4c);
+    filter: drop-shadow(5px 5px #7a925c);
     float: right;
 }
 
-.dogdiv2 p {
-    text-align: left;
+.dogbox {
+    flex-shrink: 0; /* empêche l'image de rétrécir */
 }
 
-.dogbox{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.dogbox:first-child{
-    background: url("../imgs/Chihuahua.jpg");
-    background-size: cover;
-    height: 100%;
+.dogbox img {
+    height: 400px;
+    width: auto;
+    display: block;
 }
 
 .dogtext {
-    text-align: justify;
-    width: 500px;
-
+    flex: 1; /* prend tout l'espace restant */
+    overflow-wrap: break-word; /* force le retour à la ligne dans les mots longs si nécessaire */
 }
 
+#news {
+    width: 100%;
+    background-image: url("../imgs/Home.webp");
+    height:500px;
+}
+
+footer {
+    background-color: #DF9278;
+    height: 90px;
+    box-shadow: 0px 5px 10px #936d4c;;
+    width: 100%;
+    z-index: 1;
+    font-size: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz-box{
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding-top:100px;
+}
+ 
+.question {
+  margin-bottom: 20px;
+  text-align: left;
+}
+ 
+.result {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #7B4B3A;
+}
+
+footer a {
+    text-decoration: none;
+    color: #f5f5dc;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: center;
+    flex: 3;
+    gap: 30px;
+}

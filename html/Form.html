@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title> Quel chien es-tu? </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div id="logo_container">
+            <img src="../imgs/LOGO.png" alt="LOGO" width=200 height="auto" id="logo">
+        </div>
+        <nav class="nav_links">
+            <a href="Accueil.html">  Accueil </a> 
+            <a href="Contenu.html">  Les chiens </a>
+            <a href="Guides.html"> Nos guides </a>
+            <a href="Form.html"> Nos Tests </a>
+        </nav>
+    </header>
+
+    <div class="quiz-box">
+
+        <h1>Quel chien es-tu ?</h1>
+
+        <form id="quiz-form">
+
+            <div class = "question">
+                <p>1. Tu préféres: </p>
+                <label><input type="radio" name="q1" value="sportif"> Courir dans les bois</label><br>
+                <label><input type="radio" name="q1" value="calme"> Dormir sur le canapé</label><br>
+                <label><input type="radio" name="q1" value="joueur"> Jouer avec des enfants</label>
+            </div>
+
+            <div class = "question">
+                <p>2. Ton plat préféré: </p>
+                <label><input type="radio" name="q2" value="calme"> Un bon steak bien cuit</label><br>
+                <label><input type="radio" name="q2" value="joueur"> Un plat que je peux partager</label><br>
+                <label><input type="radio" name="q2" value="sportif"> Quelque chose de protéiné !</label>
+            </div>
+
+            <div class="question">
+                <p>3. Ton style vestimentaire: </p>
+                <label><input type="radio" name="q3" value="joueur"> Coloré et fun</label><br>
+                <label><input type="radio" name="q3" value="calme"> Sobre et élégant</label><br>
+                <label><input type="radio" name="q3" value="sportif"> Pratique et solide</label>
+            </div>
+
+            <div class="question">
+                <p>4. En week-end, tu préfères...</p>
+                <label><input type="radio" name="q4" value="sportif"> Faire une randonnée ou courir</label><br>
+                <label><input type="radio" name="q4" value="calme"> Regarder une série tranquille</label><br>
+                <label><input type="radio" name="q4" value="joueur"> Sortir avec des amis</label>
+            </div>
+
+            <div class="question">
+                <p>Lors d'une soirée tu préfères :</p>
+                <label><input type="radio" name="q5" value="joueur"> Danser et rigoler</label><br>
+                <label><input type="radio" name="q5" value="calme"> Discuter avec une personne au calme</label><br>
+                <label><input type="radio" name="q5" value="sportif"> Participer à un jeu ou concours</label>
+            </div>
+
+            <div class="question">
+                <p>Si tu étais un jouet tu serais:</p>
+                <label><input type="radio" name="q6" value="joueur"> Une balle rebondissante</label><br>
+                <label><input type="radio" name="q6" value="calme"> Un doudou </label><br>
+                <label><input type="radio" name="q6" value="sportif"> Une corde solide à tirer</label>
+            </div>
+
+            <div class="question">
+                <p>Tu te décrirais comme: </p>
+                <label><input type="radio" name="q7" value="joueur"> Énergique et drôle</label><br>
+                <label><input type="radio" name="q7" value="calme"> Posé·e et observateur·rice</label><br>
+                <label><input type="radio" name="q7" value="sportif"> Déterminé·e et actif·ve</label>
+            </div>
+
+            <button type = "submit">Découvrir mon chien!</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    
+    <footer>
+        <div class="footer-links">
+            <a href="APropos.html">À propos</a>
+            <a href="https://www.efrei.fr/" target="_blank" rel="noopener noreferrer">Efrei</a>
+        </div>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+
+</body>
+</html>
