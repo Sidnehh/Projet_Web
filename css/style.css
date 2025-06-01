@@ -12,9 +12,24 @@ html{
     background-attachment: fixed;
 }
 
+hr {
+    color:#5e3e28;
+}
+
 body{
     margin: 0px;
     padding: 0px;
+}
+
+h2 {
+    color:#8e6050;
+    font-size: 30px;
+    filter: drop-shadow(1px 1px 3px #936d4c2b);
+}
+
+h4 {
+    color:#ce785b;
+    font-size : 20px;
 }
 
 header{
@@ -35,6 +50,10 @@ header a {
     text-decoration: none;
 }
 
+header a:hover {
+    color:#FAD274;
+}
+
 #logo_container{
     align-items: left;
     margin-left: 20px;
@@ -49,7 +68,7 @@ header a {
 }
 
 .content {
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     border-radius: 1%;
     width:900px;
     margin:auto;
@@ -103,6 +122,11 @@ header a {
     height: 400px;
     width: auto;
     display: block;
+    transition: transform .2s;
+}
+
+.dogbox img:hover{
+    transform: scale(1.2);
 }
 
 .dogtext {
@@ -110,10 +134,133 @@ header a {
     overflow-wrap: break-word; /* force le retour à la ligne dans les mots longs si nécessaire */
 }
 
-#news {
+#home {
+    background-image: url(../imgs/homepage.webp);
+    background-size: 1500px 500px;
+    padding-top: 80px;
+    position: relative;
     width: 100%;
-    background-image: url("../imgs/Home.webp");
-    height:500px;
+    height: 400px;
+}
+
+#home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter:drop-shadow(2px 2px 3px rgba(109, 86, 54, 0.55)) brightness(70%);;
+}
+
+#odd {
+    background-image: url(../imgs/odd.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    color: white;
+}
+
+#odd img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.title {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    color: white;
+    padding: 10px;
+}
+
+.title h1 {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    filter:drop-shadow(2px 2px 3px rgb(0,0,0));
+}
+
+.title h3 {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    filter:drop-shadow(2px 2px 3px rgb(0,0,0));
+}
+
+.title p {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    filter:drop-shadow(2px 2px 3px rgb(0,0,0));
+}
+
+.home-content {
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    margin-top:20px;
+    margin-bottom: 20px;
+    display:flex;
+}
+
+.home-content h2 {
+    font-size:30px;
+    margin-left: 40px;
+    margin-top:20px;
+    margin-bottom: 20px; 
+}
+
+#news {
+  filter: drop-shadow(2px 2px 5px #875a328e);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  height: 300px;
+  width: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+#news .news-images {
+  display: flex;
+  height: 100%;
+  width: 300%;
+  transition: transform 0.5s ease;
+}
+
+#news .news-images img {
+  width: 800px;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: filter 0.3s ease;
+}
+
+#news .news-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+#news .news-btn.prev {
+  left: 10px;
+}
+
+#news .news-btn.next {
+  right: 10px;
+}
+
+#news img:hover {
+    filter: brightness(80%);
 }
 
 footer {
@@ -156,7 +303,7 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color:#FAD274;
 }
 
 .footer-links{
@@ -164,4 +311,41 @@ footer a:hover {
     justify-content: center;
     flex: 3;
     gap: 30px;
+}
+
+#dog-callout {
+  position: relative;
+  height:180px;
+  top: 100px;
+  right: -50px;
+  background-color: #ffffffcc;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #DF9278;
+  color: #5e3e28;
+  font-weight: bold;
+  max-width: 180px;
+  text-align: center;
+}
+
+#dog-callout a {
+  color: #DF9278;
+  text-decoration: none;
+  font-weight: bold;
+  font-size:25px;
+}
+
+#dog-callout a:hover {
+  text-decoration: underline;
+}
+
+.guide-content {
+    padding-top: 20px;
+}
+
+.guide-text {
+    background-color: rgba(0, 0, 0, 0.491);
+    font-size: 20px;
+    padding: 20px;
+    color: #f5f5dc;
 }
