@@ -1,47 +1,81 @@
-document.getElementById("quiz-form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Empêche le rechargement de la page
+let currentQuestion = 1;
+const totalQuestions = 7;
 
-  let answers = {
-    sportif: 0,
-    calme: 0,
-    joueur: 0
-  };
-  let q1 = document.querySelector('input[name="q1"]:checked');
-  let q2 = document.querySelector('input[name="q2"]:checked');
-  let q3 = document.querySelector('input[name="q3"]:checked');
+document.getElementById('next-btn').addEventListener('click', nextQuestion);
+document.getElementById('prev-btn').addEventListener('click', previousQuestion);
+document.getElementById('finish-btn').addEventListener('click', finishQuiz);
 
-  let q4 = document.querySelector('input[name="q4"]:checked');
-  let q5 = document.querySelector('input[name="q5"]:checked');
-  let q6 = document.querySelector('input[name="q6"]:checked');
-  let q7 = document.querySelector('input[name="q7"]:checked');
+function updateProgress() {
+    const progress = (currentQuestion / totalQuestions) * 100;
+    document.getElementById('progress').style.width = progress + '%';
+    document.getElementById('current-question').textContent = currentQuestion;
+}
 
-  if (!q1 || !q2 || !q3 || !q4 || !q5 || !q6 || !q7) {
-  document.getElementById("result").textContent = "Merci de répondre à toutes les questions";
-  return;}
+function showQuestion(questionNumber) {
+  document.getElementById('total-questions').textContent = totalQuestions;
+    document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+    document.querySelector(`[data-question="${questionNumber}"]`).classList.add('active');
 
-  answers[q1.value]++;
-  answers[q2.value]++;
-  answers[q3.value]++;
-  answers[q4.value]++;
-  answers[q5.value]++;
-  answers[q6.value]++;
-  answers[q7.value]++;
+    document.getElementById('prev-btn').disabled = questionNumber === 1;
+    document.getElementById('next-btn').style.display = questionNumber === totalQuestions ? 'none' : 'inline-block';
+    document.getElementById('finish-btn').style.display = questionNumber === totalQuestions ? 'inline-block' : 'none';
 
-  // Trouve la catégorie dominante
-  let result = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+    updateProgress();
+}
 
-  let dogType = "";
-  switch(result) {
-    case "sportif":
-      dogType = "Tu es un Border Collie : rapide, intelligent et toujours en mouvement ! 🐕";
-      break;
-    case "calme":
-      dogType = "Tu es un Basset Hound : posé, doux et fidèle ";
-      break;
-    case "joueur":
-      dogType = "Tu es un Golden Retriever : sociable, joueur et adoré de tous ! ";
-      break;
-  }
+function nextQuestion() {
+    const currentQuestionElement = document.querySelector(`[data-question="${currentQuestion}"]`);
+    const answered = Array.from(currentQuestionElement.querySelectorAll('input[type="radio"]')).some(r => r.checked);
+    if (!answered) {
+        alert('Veuillez répondre à cette question avant de continuer.');
+        return;
+    }
+    if (currentQuestion < totalQuestions) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    }
+}
 
-  document.getElementById("result").textContent = dogType;
-});
+function previousQuestion() {
+    if (currentQuestion > 1) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+    }
+}
+
+function finishQuiz() {
+    let answers = { sportif: 0, calme: 0, joueur: 0 };
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (!selected) {
+            alert('Veuillez répondre à toutes les questions.');
+            return;
+        }
+        answers[selected.value]++;
+    }
+
+    const resultKey = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+    let message = "";
+
+    switch (resultKey) {
+        case 'sportif':
+            message = "Tu es un Border Collie : rapide, intelligent et toujours en mouvement !";
+            break;
+        case 'calme':
+            message = "Tu es un Basset Hound : posé, doux et fidèle. Un vrai pote de canapé !";
+            break;
+        case 'joueur':
+            message = "Tu es un Golden Retriever : sociable, joueur et adoré de tous !";
+            break;
+    }
+
+    document.getElementById('result').innerHTML = `<h3>${message}</h3>
+        <a class="dog-result-link" href="Contenu.html">Découvre ton profil canin !</a>`;
+    document.getElementById('quiz-form').style.display = 'none';
+    document.querySelector('.quiz-navigation').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('question-counter').style.display = 'none';
+}
+
+showQuestion(currentQuestion);

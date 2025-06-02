@@ -1,76 +1,94 @@
 <!DOCTYPE html>
-<head>
-    <title> Accueil </title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/newspage.js"></script>
-</head>
-<body>
-    <header>
-        <div id="logo_container">
-            <img src="../imgs/LOGO.png" alt="LOGO" width=200 height="auto" id="logo">
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title> Accueil </title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/newspage.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="logo_container">
+                <img src="../imgs/LOGO.png" alt="LOGO" width=200 id="logo">
+            </div>
+            <nav class="nav_links">
+                <a href="Accueil.html">  Accueil </a> 
+                <a href="Contenu.html">  Les chiens </a>
+                <a href="Guides.html"> Nos guides </a>
+                <a href="NosTest.html"> Nos Tests </a>
+            </nav>
+        </header>
+
+        <div id="home">
+            <div class="title">
+                <h1>Le site pour tous les amoureux des chiens !</h1>
+                <h3>Qui sommes-nous ?</h3>
+                <p >
+                    Nous sommes une équipe de passionnés, réunis par une conviction simple : les chiens rendent la vie meilleure. Leur loyauté, leur joie de vivre, leur capacité à nous réconforter ou simplement à nous faire sourire en font des compagnons extraordinaires. Que l’on vive en ville ou à la campagne, seul ou en famille, il y a souvent une place pour un chien dans nos vies — à condition de bien le comprendre.
+
+                    Notre objectif à travers ce site est d’informer, d’éduquer et de sensibiliser. Trop souvent, les décisions liées à l’adoption ou à l’éducation d’un chien sont prises sans les bonnes connaissances, ce qui peut mener à des incompréhensions, voire des abandons. Nous pensons qu’avec les bons conseils, les bons gestes, et une meilleure compréhension de leurs besoins, chacun peut vivre une relation harmonieuse et épanouissante avec son chien.
+
+                    Que vous soyez déjà propriétaire, futur adoptant ou simplement curieux, nous espérons que ce site pourra vous aider à découvrir tout ce qu’il faut savoir sur les chiens — pour mieux vivre à leurs côtés, jour après jour
+                </p>
+            </div>
         </div>
-        <nav class="nav_links">
-            <a href="Accueil.html">  Accueil </a> 
-            <a href="Contenu.html">  Les chiens </a>
-            <a href="Guides.html"> Nos guides </a>
-            <a href="Form.html"> Nos Tests </a>
-        </nav>
-    </header>
 
-    <div id="home">
+        <div class="home-content">
+            <div id="news">
+                <h2> Nos actualités à découvrir</h2>
+                <div class="news-images">
+                    <div class="carousel-item">
+                        <img src="../imgs/BouffeChien.webp" alt="Image 1">
+                        <a href="Guides.html" class="carousel-link">
+                        <div class="carousel-text">Quelle alimentation pour mon chien ?</div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imgs/SoinsChien.jpg" alt="Image 2">
+                        <a href="Guides.html" class="carousel-link">
+                        <div class="carousel-text">Tout savoir sur le toilettage canin !</div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imgs/Quiz.webp" alt="Image 3">
+                        <a href="NosTest.html" class="carousel-link">
+                        <div class="carousel-text">Découvrez quel chien vous êtes !</div>
+                        </a>
+                    </div>
+                    </div>
+                <button class="news-btn prev" onclick="showPrevNews()">&#10094;</button>
+                <button class="news-btn next" onclick="showNextNews()">&#10095;</button>
+            </div>
+            <div id="dog-callout">
+                <h4>Envie d'un chien ?</h4>
+                <p> Trouvez votre compagnon idéal dès aujourd'hui !</p>
+                <a href="Adoption.html">Signez ici</a>
+            </div>
+        </div>
+
+        <div id="odd">
         <div class="title">
-            <h1>Le site pour tous les amoureux des chiens !</h1>
-            <h3>Qui sommes-nous ?</h3>
-            <p >
-                Nous sommes une équipe de passionnés, réunis par une conviction simple : les chiens rendent la vie meilleure. Leur loyauté, leur joie de vivre, leur capacité à nous réconforter ou simplement à nous faire sourire en font des compagnons extraordinaires. Que l’on vive en ville ou à la campagne, seul ou en famille, il y a souvent une place pour un chien dans nos vies — à condition de bien le comprendre.
+            <h1>Lutter contre l’abandon des chiens, c’est protéger la vie terrestre</h1>
+            <h3>Un pas vers l'ODD 15</h3>
+            <p>
+                Nous sommes une équipe de passionnés convaincus qu’adopter un chien, c’est aussi prendre une responsabilité pour la vie. Chaque année, des milliers de chiens sont abandonnés, souvent par manque de préparation, d’éducation ou d’accompagnement. Ces abandons ne sont pas une fatalité : ils sont souvent le résultat d’un manque d’information et de sensibilisation.
 
-                Notre objectif à travers ce site est d’informer, d’éduquer et de sensibiliser. Trop souvent, les décisions liées à l’adoption ou à l’éducation d’un chien sont prises sans les bonnes connaissances, ce qui peut mener à des incompréhensions, voire des abandons. Nous pensons qu’avec les bons conseils, les bons gestes, et une meilleure compréhension de leurs besoins, chacun peut vivre une relation harmonieuse et épanouissante avec son chien.
+                Notre objectif est d’agir pour éviter ces situations, en proposant un espace d’information complet autour du chien : comportement, besoins, santé, adoption, éducation… En comprenant mieux l’animal, chacun peut faire un choix éclairé et offrir une vie digne à son compagnon.
 
-                Que vous soyez déjà propriétaire, futur adoptant ou simplement curieux, nous espérons que ce site pourra vous aider à découvrir tout ce qu’il faut savoir sur les chiens — pour mieux vivre à leurs côtés, jour après jour
+                Cette démarche s’inscrit dans l’Objectif de Développement Durable 15 — « Vie terrestre » — qui vise à préserver la biodiversité et à encourager une relation plus respectueuse entre l’humain et l’animal. Le chien, être sensible et social, mérite une place stable et aimante au sein de notre société.
+
+                Nous espérons que ce site aidera tous ceux qui aiment les chiens ou souhaitent les accueillir — à le faire dans le respect, la bienveillance et la responsabilité.
             </p>
         </div>
     </div>
 
-    <div class="home-content">
-        <div id="news">
-            <h2> Nos actualités à découvrir</h2>
-            <div class="news-images">
-                <img src="../imgs/BouffeChien.webp" alt="Image 1">
-                <img src="../imgs/SoinsChien.jpg" alt="Image 2">
-                <img src="../imgs/Quiz.webp" alt="Image 3">
+
+
+        <footer>
+            <div class="footer-links">
+                <a href="APropos.html">À propos</a>
+                <a href="https://www.efrei.fr/" target="_blank" rel="noopener noreferrer">Efrei</a>
             </div>
-            <button class="news-btn prev" onclick="showPrevNews()">&#10094</button>
-            <button class="news-btn next" onclick="showNextNews()">&#10095</button>
-        </div>
-        <div id="dog-callout">
-            <h4>Envie d'un chien ?</h4>
-            <p> Trouvez votre compagnon idéal dès aujourd'hui !</p>
-            <a href="#">Signez ici</a>
-        </div>
-    </div>
-
-    <div id="odd">
-    <div class="title">
-        <h1>Lutter contre l’abandon des chiens, c’est protéger la vie terrestre</h1>
-        <h3>Un pas vers l'ODD 15</h3>
-        <p>
-            Nous sommes une équipe de passionnés convaincus qu’adopter un chien, c’est aussi prendre une responsabilité pour la vie. Chaque année, des milliers de chiens sont abandonnés, souvent par manque de préparation, d’éducation ou d’accompagnement. Ces abandons ne sont pas une fatalité : ils sont souvent le résultat d’un manque d’information et de sensibilisation.
-
-            Notre objectif est d’agir pour éviter ces situations, en proposant un espace d’information complet autour du chien : comportement, besoins, santé, adoption, éducation… En comprenant mieux l’animal, chacun peut faire un choix éclairé et offrir une vie digne à son compagnon.
-
-            Cette démarche s’inscrit dans l’Objectif de Développement Durable 15 — « Vie terrestre » — qui vise à préserver la biodiversité et à encourager une relation plus respectueuse entre l’humain et l’animal. Le chien, être sensible et social, mérite une place stable et aimante au sein de notre société.
-
-            Nous espérons que ce site aidera tous ceux qui aiment les chiens ou souhaitent les accueillir — à le faire dans le respect, la bienveillance et la responsabilité.
-        </p>
-    </div>
-</div>
-
-
-
-    <footer>
-        <div class="footer-links">
-            <a href="APropos.html">À propos</a>
-            <a href="https://www.efrei.fr/" target="_blank" rel="noopener noreferrer">Efrei</a>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
+</html>
